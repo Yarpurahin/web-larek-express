@@ -25,7 +25,7 @@ const createOrder = async (req: Request, res: Response, next: NextFunction) => {
       return next(new BadRequestError('Неверная сумма заказа'));
     }
 
-    return res.status(200).send({ id: randomUUID(), total: orderTotal });
+    return res.status(201).send({ id: randomUUID(), total: orderTotal });
   } catch (err) {
     return next(err);
   }
